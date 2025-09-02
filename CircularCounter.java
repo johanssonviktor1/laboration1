@@ -77,7 +77,6 @@ public abstract class CircularCounter implements CounterType
 	@Override
 	public String toString()
 	{
-		return null;
-		
+	return Strig.valueOf(CurrentCount);	
 	}
 }
