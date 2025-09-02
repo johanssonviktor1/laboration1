@@ -19,7 +19,7 @@ public abstract class CircularCounter implements CounterType
 		this.direction = direction;
 		this.nextCounter = nextCounter;
 		
-		
+		//vet inte om det ska vara 59 är för max?
 		if (maxNrOfCounts < 2)
 			this.MAX_NR_OF_COUNTS = 0;
 		else
