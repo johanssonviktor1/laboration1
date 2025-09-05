@@ -1,14 +1,25 @@
+
+/**
+ * 
+ *  
+ * En fungerande clocka vars "sekundräknare" som ska räkna till 59 och sedan börja om, 
+ * och då ska minuträknaren gå ett steg, och sedan till timmar
+ * 
+ *
+ * @author Viktor Johansson & Anton Tängnander
+ * @version 2025-09-02
+ */
 package oodesign;
 
 public abstract class CircularCounter implements CounterType
 {
 
-	enum Direction {INCREASING, DECREASING};
-	private Direction direction;
+	public enum Direction {INCREASING, DECREASING};
+	public Direction direction;
 	
 	//privat?
-	public int currentCount;
-	public boolean isPaused;
+	private int currentCount;
+	private boolean isPaused;
 	public final int MAX_NR_OF_COUNTS;
 	public CounterType nextCounter;
 	
@@ -19,9 +30,9 @@ public abstract class CircularCounter implements CounterType
 		this.direction = direction;
 		this.nextCounter = nextCounter;
 		
-		//vet inte om det ska vara 59 är för max?
+		//vilken siffa sja det vara här?
 		if (maxNrOfCounts < 2)
-			this.MAX_NR_OF_COUNTS = 0;
+			this.MAX_NR_OF_COUNTS = 2;
 		else
 			this.MAX_NR_OF_COUNTS = maxNrOfCounts;
 		
@@ -62,21 +73,22 @@ public abstract class CircularCounter implements CounterType
 						nextCounter.count();
 					}
 				}
-			else if (direction == Direction.DECREASING)
+			else if (direction == Direction.DECREASING) 
+				{
 				currentCount--;
 				if (currentCount < 0)	{
 					currentCount = MAX_NR_OF_COUNTS - 1;
 					if (nextCounter != null)
 						nextCounter.count();
 				}
+	
 			}
 		}
-
-
+	}
 	
 	@Override
 	public String toString()
 	{
-	return Strig.valueOf(CurrentCount);	
+		 return String.valueOf(currentCount);	
 	}
 }
