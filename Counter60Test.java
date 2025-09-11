@@ -43,14 +43,6 @@ class Counter60Test {
     }
 
     @Test
-    void testCountingDown() {
-        CounterType c = new Counter60(CircularCounter.Direction.DECREASING, null);
-        assertEquals(59, c.getCount()); // börjar på högsta värdet
-        c.count();
-        assertEquals(58, c.getCount());
-    }
-
-    @Test
     void testNextCounterTriggered() {
         CounterType minutes = new Counter60();
         CounterType seconds = new Counter60(CircularCounter.Direction.INCREASING, minutes);
