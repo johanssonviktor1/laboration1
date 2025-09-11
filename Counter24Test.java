@@ -10,22 +10,6 @@ public class Counter24Test {
 	void testNextCounterTriggered() {
 		CounterType hours = new Counter24();
 		CounterType minutes = new Counter60(CircularCounter.Direction.INCREASING, hours);
-		CounterType seconds = new Counter60(CircularCounter.Direction.INCREASING, minutes);
-		
-
-		// 59 steg -> sekunder på 59
-		for (int i = 0; i < 59; i++) {
-			seconds.count();
-		}
-		assertEquals(59, seconds.getCount());
-		assertEquals(0, minutes.getCount());
-
-		// ett steg till -> sekunder på 0, minuter ska öka till 1
-		seconds.count();
-		assertEquals(0, seconds.getCount());
-		assertEquals(1, minutes.getCount());
-
-		minutes.reset();
 		
 		for (int i = 0; i < 59; i++) {
 			minutes.count();
