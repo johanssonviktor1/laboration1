@@ -25,7 +25,7 @@ class Counter60Test {
         assertEquals(1, c.getCount());
 
         c.pause();
-        c.count();  // ska inte öka eftersom den är pausad
+        c.count();  // ska inte öka, pausad
         assertEquals(1, c.getCount());
 
         c.resume();
@@ -39,7 +39,7 @@ class Counter60Test {
         for (int i = 0; i < 60; i++) {
             c.count();
         }
-        assertEquals(0, c.getCount()); // efter 60 steg ska den slå om
+        assertEquals(0, c.getCount()); // efter 60 tick, slå om
     }
 
     @Test
