@@ -14,6 +14,7 @@ public class Counter24Test {
         for (int i = 0; i < 59; i++) {
             minutes.count();
         }
+
         assertEquals(59, minutes.getCount());
         assertEquals(0, hours.getCount());
 
@@ -21,7 +22,5 @@ public class Counter24Test {
         minutes.count();
         assertEquals(0, minutes.getCount());
         assertEquals(1, hours.getCount());
-
     }
-
 }

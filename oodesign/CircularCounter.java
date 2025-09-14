@@ -13,7 +13,6 @@ public abstract class CircularCounter implements CounterType {
 
     public enum Direction {INCREASING, DECREASING}
 
-
     //privat?
     private int currentCount;
     private boolean isPaused;
@@ -21,14 +20,12 @@ public abstract class CircularCounter implements CounterType {
     private Direction direction;
     private CounterType nextCounter;
 
-
     public CircularCounter(int maxNrOfCounts, Direction direction, CounterType nextCounter) {
         this.direction = direction;
         this.nextCounter = nextCounter;
 
         if (maxNrOfCounts < 2) this.MAX_NR_OF_COUNTS = 2;
         else this.MAX_NR_OF_COUNTS = maxNrOfCounts;
-
 
         //Om det är en nedåträknare, börja räkna från högsta värde istället för från noll
         if (this.direction == Direction.DECREASING && this.MAX_NR_OF_COUNTS > 0) currentCount = MAX_NR_OF_COUNTS - 1;

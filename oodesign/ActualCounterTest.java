@@ -62,15 +62,17 @@ class ActualCounterTest {
             for (int i = 0; i < 59; i++) {
                 seconds.count();
             }
-            assertEquals(59, seconds.getCount());
-            // ett steg till -> sekunder på 0, minuter ska öka till 1
 
+            assertEquals(59, seconds.getCount());
+
+            // ett steg till -> sekunder på 0, minuter ska öka till 1
             seconds.count();
             assertEquals(0, seconds.getCount());
             if (hours.getCount() == 0) {
                 assertTrue(minutes.getCount() > 0);
             }
         }
+
         //Checks to see if hours is registered and minutes gets reset
         assertEquals(0, minutes.getCount());
         assertEquals(1, hours.getCount());
@@ -99,7 +101,6 @@ class ActualCounterTest {
             for (int i = 0; i < 59; i++) {
                 seconds.count();
             }
-
         }
 
         //Checks to see if all values are still at 0
@@ -132,6 +133,3 @@ class ActualCounterTest {
         assertEquals(1, hours.getCount());
     }
 }
-
-
-
