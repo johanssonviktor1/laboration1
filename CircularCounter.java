@@ -12,8 +12,8 @@
 package oodesign;
 
 public abstract class CircularCounter implements CounterType
-{
-
+	{
+	
 	public enum Direction {INCREASING, DECREASING};
 	
 	//privat?

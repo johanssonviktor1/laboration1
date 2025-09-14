@@ -1,6 +1,7 @@
 package oodesign;
 
 public class Counter2 extends CircularCounter {
+	
 	public Counter2() {
 		this(Direction.INCREASING, null); // vad anropas här?
 	}
@@ -12,7 +13,6 @@ public class Counter2 extends CircularCounter {
 	public Counter2(Direction direction) {
 		this(direction, null); // vad anropas här?
 	}
-
 
 	public Counter2(Direction direction, CounterType next)
 	{

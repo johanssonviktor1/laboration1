@@ -1,7 +1,6 @@
 package oodesign;
 
 import static org.junit.jupiter.api.Assertions.*;
-
 import org.junit.jupiter.api.Test;
 
 class Counter60Test {
@@ -25,7 +24,7 @@ class Counter60Test {
         assertEquals(1, c.getCount());
 
         c.pause();
-        c.count();  // ska inte öka, pausad
+        c.count();  // ska inte öka eftersom pausad
         assertEquals(1, c.getCount());
 
         c.resume();
@@ -41,6 +40,7 @@ class Counter60Test {
         }
         assertEquals(0, c.getCount()); // efter 60 tick, slå om
     }
+
 
     @Test
     void testNextCounterTriggered() {

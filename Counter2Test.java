@@ -8,8 +8,6 @@ class Counter2Test {
 
 	@Test
 	void test() {
-		fail("Not yet implemented");
-
 		CounterType myCounter = new Counter2();
 		
 		assertEquals(0, myCounter.getCount());

@@ -11,6 +11,7 @@ public class Counter24Test {
 		CounterType hours = new Counter24();
 		CounterType minutes = new Counter60(CircularCounter.Direction.INCREASING, hours);
 		
+		
 		for (int i = 0; i < 59; i++) {
 			minutes.count();
 		}
